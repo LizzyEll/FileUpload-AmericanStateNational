@@ -13,3 +13,4 @@ This program is difficult to use and support is a nightmare.
 - Learn how to make better READMEs
 - Create base pages and log in screen
 - Add Prisma.io database
+- Create color template
