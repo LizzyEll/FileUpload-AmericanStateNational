@@ -1,0 +1,48 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70dvh;
+  width: 50%;
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+#form {
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input::placeholder {
+  color: #ccc;
+  text-align: center;
+}
+
+.input:focus {
+  outline: 2px solid #ddd;
+}
+
+.input[type="submit"] {
+  transition-duration: .3s;
+}
+
+.input[type="submit"]:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
