@@ -1,6 +1,6 @@
 # Uploadz
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/LizzyEll/FileUpload-AmericanStateNational)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/LizzyEll/FileUpload-AmericanStateNational?cacheSeconds=0)
 ![GitHub last commit](https://img.shields.io/github/last-commit/LizzyEll/FileUpload-AmericanStateNational)
 ![GitHub License](https://img.shields.io/github/license/LizzyEll/FileUpload-AmericanStateNational)
 
