@@ -7,7 +7,32 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 export default function Home() {
     
     function submit(e) {
-        console.log(e);
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const email = formData.get("email");
+        const password = formData.get("password");
+        fetch("/api/login", {
+            method: "POST",
+            body: JSON.stringify({ email, password }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+            return res.json().then(json => {
+                throw new Error(json.message);
+            });
+        }).then(data => {
+            console.log(data);
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("email", data.email);
+            window.location.href = "/dashboard";
+        }).catch(err => {
+            console.error(err);
+        });
     }
 
     return (
@@ -24,11 +49,11 @@ export default function Home() {
                 />
             </Head>
             <main className={poppins.className}>
-                <div className={styles.box}>
+                <div className={`box`}>
                     <h1>Uploadz - Log in</h1>
-                    <form action="/api/login" id={styles.form} method="POST">
+                    <form onSubmit={submit} id={styles.form} method="POST">
                         <label>
-                            <input className={styles.input} type="text" name="username" placeholder="Username"/>
+                            <input className={styles.input} type="text" name="email" placeholder="Email"/>
                         </label>
                         <label>
                             <input className={styles.input} type="password" name="password" placeholder="Password"/>
